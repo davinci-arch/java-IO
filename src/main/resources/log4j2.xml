@@ -1,0 +1,17 @@
+<Configuration>
+
+    <Appenders>
+        <Console name="console" target = "SYSTEM_OUT">
+
+            <CustomConsoleLayout/>
+
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level = "info">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

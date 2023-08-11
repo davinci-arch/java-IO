@@ -13,7 +13,7 @@ public class Main {
         String out = "out.txt";
 
         try {
-            byteStream(path, out);
+            characterStreamBasedOnReader(path, out);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -40,7 +40,27 @@ public class Main {
             in.close();
             out.close();
         }
+    }
 
+    public static void characterStreamBasedOnReader(String path, String outPath) throws IOException {
+
+        FileReader in = null;
+        FileWriter out = null;
+
+        try {
+            in = new FileReader(path);
+            out = new FileWriter(outPath);
+
+            int c;
+
+            while ((c = in.read()) != -1) {
+
+                out.write(c);
+            }
+        } finally {
+            if (in != null) in.close();
+            if (out != null) out.close();
+        }
 
     }
 

@@ -13,6 +13,7 @@ public class Main {
     public static void createFile(String path, String name, String extension) {
 
         try {
+
             FileWriter fileWriter = new FileWriter(path + name + extension);
             fileWriter.append("");
             fileWriter.close();
@@ -21,10 +22,9 @@ public class Main {
         }
 
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String path = "text.txt";
         String out = "out.txt";
-
         try {
             scannerDoubleReader(path, out);
         } catch (IOException e) {
